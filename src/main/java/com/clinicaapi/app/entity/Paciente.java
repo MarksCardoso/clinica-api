@@ -36,7 +36,6 @@ public class Paciente {
     @Column(nullable = false)
     private LocalDate dataNascimento;
 
-    // TODO: descomentar após merge da feature/consulta
-    // @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
-    // private List<Consulta> consultas;
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
+    private List<Consulta> consultas;
 }
