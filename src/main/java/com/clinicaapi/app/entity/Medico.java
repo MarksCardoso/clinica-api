@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
@@ -29,7 +31,6 @@ public class Medico {
     @Column(nullable = false)
     private String email;
 
-    //TODO: descomentar após merge da feature/consulta
-    //@OneToMany(mappedBy = "medico", cascade = CascadeType.ALL)
-    //private List<Consulta> consultas;
+    @OneToMany(mappedBy = "medico", cascade = CascadeType.REMOVE)
+    private List<Consulta> consultas;
 }

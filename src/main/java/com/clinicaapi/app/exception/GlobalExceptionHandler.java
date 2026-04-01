@@ -22,8 +22,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BusinessException.class)
     public ResponseEntity<Map<String, Object>> handleBusiness(BusinessException ex) {
         Map<String, Object> erro = new HashMap<>();
-        erro.put("status", HttpStatus.BAD_REQUEST.value());
+        erro.put("status", HttpStatus.CONFLICT.value());
         erro.put("mensagem", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(erro);
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(erro);
     }
 }
