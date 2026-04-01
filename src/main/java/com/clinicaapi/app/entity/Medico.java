@@ -31,6 +31,6 @@ public class Medico {
     @Column(nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "medico", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "medico", cascade = CascadeType.REMOVE)
     private List<Consulta> consultas;
 }

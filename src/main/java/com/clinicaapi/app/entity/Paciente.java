@@ -36,6 +36,6 @@ public class Paciente {
     @Column(nullable = false)
     private LocalDate dataNascimento;
 
-    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "paciente", cascade = CascadeType.REMOVE)
     private List<Consulta> consultas;
 }
