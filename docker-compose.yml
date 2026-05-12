@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: clinica_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: marks
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/clinica_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: marks
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - postgres
