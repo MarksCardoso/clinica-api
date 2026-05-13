@@ -1,0 +1,31 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1976d2;
+    padding: 12px 24px;
+    color: white;
+}
+
+.navbar-logo {
+    font-size: 20px;
+    margin: 0;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.navbar-links li:hover {
+    text-decoration: underline;
+}
+
+.navbar-links li.ativo {
+  font-weight: bold;
+  text-decoration: underline;
+}
