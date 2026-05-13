@@ -1,10 +1,19 @@
+import { useState } from 'react'
 import PacienteList from './components/PacienteList'
+import Navbar from './components/Navbar'
+import MedicoList from './components/MedicoList'
+import ConsultaList from './components/ConsultaList'
 
 function App() {
+  const [tela, setTela] = useState('pacientes')
+
   return (
     <div>
-      <h1>Clínica API</h1>
-      <PacienteList />
+      <Navbar telaAtiva={tela} onNavegar= {setTela}/>
+      {tela == 'pacientes' && <PacienteList />}
+      {tela == 'medicos' && <MedicoList />}
+      {tela == 'consultas' && <ConsultaList />}
+
     </div>
   )
 }
